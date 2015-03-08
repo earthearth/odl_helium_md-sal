@@ -1,0 +1,56 @@
+module earth-rpcprovider {
+  yang-version 1;
+  namespace "urn:opendaylight:sdnap:rpcprovider";
+  prefix provider;
+
+  import ietf-inet-types {
+    prefix inet;
+    revision-date 2010-09-24;
+  }
+
+  description "Model definition for sdnap earth-rpcprovider.";
+
+  revision 2015-03-01 {
+    description "Initial revision of earth-rpcprovider.";
+  }
+
+  typedef keyword-type {
+    type string {
+      length "1 .. 8";
+      pattern "[a-zA-Z]*";
+    }
+  }
+
+  grouping profile {
+
+    leaf city {
+      type string;
+    }
+
+    leaf employees {
+      type uint32;
+    }
+  }
+
+  rpc earth-rpcprovider {
+
+    input {
+      leaf keyword {
+        type keyword-type;
+      }
+    }
+
+    output {
+
+      leaf url {
+        type inet:uri;
+      }
+
+      leaf qq {
+        type string;
+      }
+
+      uses profile;
+    }
+  }
+}

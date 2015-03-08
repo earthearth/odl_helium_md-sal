@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<features name="karaf-1.0.0-Helium-SR2" xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xsi:schemaLocation="http://karaf.apache.org/xmlns/features/v1.2.0 http://karaf.apache.org/xmlns/features/v1.2.0">
+
+  <repository>mvn:org.opendaylight.yangtools/features-yangtools/0.6.4-Helium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-mdsal/1.1.2-Helium-SR2/xml/features</repository>
+  <repository>mvn:org.opendaylight.controller/features-restconf/1.1.2-Helium-SR2/xml/features</repository>
+
+  <feature name="earth-rpcprovider-model" description="EARTH :: RPCPROVIDER :: MODEL" version="1.0.0-Helium-SR2">
+    <feature version="0.6.4-Helium-SR2">odl-yangtools-models</feature>
+    <bundle>mvn:org.opendaylight.sdnap/model/1.0.0-Helium-SR2</bundle>
+  </feature>
+
+  <feature name="earth-rpcprovider-impl" description="EARTH :: RPCPROVIDER :: IMPL" version="1.0.0-Helium-SR2">
+    <feature version="1.0.0-Helium-SR2">earth-rpcprovider-model</feature>
+    <feature version="1.1.2-Helium-SR2">odl-restconf</feature>
+    <bundle>mvn:org.opendaylight.sdnap/implementation/1.0.0-Helium-SR2</bundle>
+    <configfile finalname="etc/opendaylight/karaf/801-rpcprovider-config.xml">
+      mvn:org.opendaylight.sdnap/configuration/1.0.0-Helium-SR2/xml/config
+    </configfile>
+  </feature>
+
+  <feature name="earth-rpcprovider-apidocs" description="EARTH :: RPCPROVIDER :: APIDOCS" version="1.0.0-Helium-SR2">
+
+    <feature version="1.0.0-Helium-SR2">earth-rpcprovider-impl</feature>
+    <feature version="1.1.2-Helium-SR2">odl-mdsal-apidocs</feature>
+  </feature>
+
+</features>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<features xmlns="http://karaf.apache.org/xmlns/features/v1.2.0" name="karaf">
+    <feature name="karaf" version="1.0.0-Helium-SR2" description="karaf">
+        <bundle>mvn:org.opendaylight.sdnap/model/1.0.0-Helium-SR2</bundle>
+        <bundle>mvn:org.opendaylight.yangtools.model/ietf-inet-types/2010.09.24.7-SNAPSHOT</bundle>
+        <bundle>mvn:org.opendaylight.sdnap/implementation/1.0.0-Helium-SR2</bundle>
+        <bundle>mvn:org.opendaylight.controller/sal-binding-config/1.1.2-Helium-SR2</bundle>
+        <bundle>mvn:org.opendaylight.controller/config-api/0.2.7-Helium-SR2</bundle>
+        <bundle>mvn:org.osgi/org.osgi.core/5.0.0</bundle>
+        <bundle>mvn:org.osgi/org.osgi.compendium/5.0.0</bundle>
+        <bundle>mvn:org.opendaylight.controller/sal-binding-api/1.1.2-Helium-SR2</bundle>
+        <bundle>mvn:org.opendaylight.controller/sal-common-api/1.1.2-Helium-SR2</bundle>
+        <bundle>wrap:mvn:org.opendaylight.sdnap/configuration/1.0.0-Helium-SR2/xml/config</bundle>
+        <bundle>mvn:org.opendaylight.yangtools/yang-binding/0.6.4-Helium-SR2</bundle>
+        <bundle>mvn:org.opendaylight.yangtools/concepts/0.6.4-Helium-SR2</bundle>
+        <bundle>mvn:org.opendaylight.yangtools/util/0.6.4-Helium-SR2</bundle>
+        <bundle>wrap:mvn:com.google.code.findbugs/jsr305/2.0.3</bundle>
+        <bundle>wrap:mvn:com.github.romix/java-concurrent-hash-trie-map/0.2.0</bundle>
+        <bundle>mvn:com.google.guava/guava/14.0.1</bundle>
+        <bundle>mvn:org.opendaylight.yangtools/yang-common/0.6.4-Helium-SR2</bundle>
+        <bundle>mvn:org.slf4j/slf4j-api/1.7.2</bundle>
+        <bundle>mvn:org.opendaylight.yangtools/object-cache-api/0.6.4-Helium-SR2</bundle>
+    </feature>
+</features>

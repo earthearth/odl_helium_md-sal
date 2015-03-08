@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<snapshot>
+  <required-capabilities>
+    <capability>
+      urn:opendaylight:sdnap:earth:rpcprovider-impl?module=earth-rpcprovider-impl&amp;revision=2015-03-03
+    </capability>
+  </required-capabilities>
+  <configuration>
+    <data xmlns="urn:ietf:params:xml:ns:netconf:base:1.0">
+      <modules xmlns="urn:opendaylight:params:xml:ns:yang:controller:config">
+        <module>
+          <type xmlns:earth="urn:opendaylight:sdnap:earth:rpcprovider-impl">
+            earth:earth-rpcprovider-impl
+          </type>
+          <name>earth-rpcprovider-impl</name>
+
+          <rpc-registry>
+            <type xmlns:binding="urn:opendaylight:params:xml:ns:yang:controller:md:sal:binding">
+              binding:binding-rpc-registry
+            </type>
+            <name>binding-rpc-broker</name>
+          </rpc-registry>
+
+          <contents-switch-flag>url</contents-switch-flag>
+
+        </module>
+      </modules>
+    </data>
+  </configuration>
+</snapshot>

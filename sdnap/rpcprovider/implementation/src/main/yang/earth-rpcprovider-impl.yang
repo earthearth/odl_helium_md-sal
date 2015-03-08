@@ -1,0 +1,45 @@
+module earth-rpcprovider-impl {
+  yang-version 1;
+  namespace "urn:opendaylight:sdnap:earth:rpcprovider-impl";
+  prefix earth-rpcprovider-impl;
+
+  import config {
+    prefix config;
+    revision-date 2013-04-05;
+  }
+
+  import opendaylight-md-sal-binding {
+    prefix md-sal;
+    revision-date 2013-10-28;
+  }
+
+  description "Definition of sdnap :: earth :: rpcprovider-impl";
+
+  revision 2015-03-03 {
+    description "Initial revision";
+  }
+
+  identity earth-rpcprovider-impl {
+    base config:module-type;
+    config:java-name-prefix EarthRpcProvider;
+  }
+
+  augment "/config:modules/config:module/config:configuration" {
+    case earth-rpcprovider-impl {
+      when "/config:modules/config:module/config:type = 'earth-rpcprovider-impl'";
+
+      container rpc-registry {
+        uses config:service-ref {
+          refine type {
+            mandatory false;
+            config:required-identity md-sal:binding-rpc-registry;
+          }
+        }
+      }
+      
+      leaf contents-switch-flag {
+        type string;
+      }
+    }
+  }
+}
